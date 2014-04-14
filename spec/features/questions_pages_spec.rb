@@ -8,3 +8,9 @@ describe Question do
     end
   end
 end
+
+# describe Answer do
+#   context 'creating an answer' do
+#     it 'lets you answer a question' do
+#       visit questions_path
+#       question = Factory

@@ -1,0 +1,15 @@
+<%= render "layouts/errors", object: @answer %>
+
+<%= form_for [@question, @answer], url: new_question_answer_path(@question_id), :html => { :multipart => true } do |f| %>
+  <div class="form-group">
+    <%= f.label :answer %>
+    <%= f.text_area :answer, :class => "form-control" %>
+  </div>
+
+  <%= f.hidden_field :user_id, :value => @user.id %>
+  <%= f.hidden_field :question_id, :value => @question.id %>
+
+  <div class="form-group">
+    <%= f.submit "Submit", :class => 'btn btn-info' %>
+  </div>
+<% end %>

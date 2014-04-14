@@ -14,7 +14,7 @@ class QuestionsController < ApplicationController
     @question = Question.new question_params
     if @question.save
       flash[:notice] = "Question Posted"
-      redirect_to :back
+      redirect_to root_url
     else
       flash[:alert] = "invalid input"
       render 'new'
@@ -29,7 +29,7 @@ class QuestionsController < ApplicationController
     @question = Question.find params[:id]
     if @question.update question_params
       flash[:notice] = "Question updated"
-      redirect_to :back
+      redirect_to root_url
     else
       flash[:alert] = "Invalid input"
       render 'edit'
@@ -44,7 +44,7 @@ class QuestionsController < ApplicationController
     @question = Question.find params[:id]
     if @question.destroy
       flash[:notice] = "Question deleted"
-      redirect_to :back
+      redirect_to root_url
     end
   end
 

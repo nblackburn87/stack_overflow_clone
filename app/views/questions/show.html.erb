@@ -1,9 +1,11 @@
 <%= content_for(:navigation) do %>
   <%= button_to "Back to Main", questions_path, :class => "btn btn-info" %>
+  <% #currently must be signed in to return to main? %>
 <% end %>
 <% content_for(:header) do %>
   <div class="header">
     <h4><%= @question.question %>
   </div>
+  <%= link_to "Answer Question", new_question_answer_path(@question.id), :class => "btn btn-info btn-sm" %>
 <% end %>
 
