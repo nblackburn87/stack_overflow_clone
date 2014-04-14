@@ -1,0 +1,9 @@
+<%= content_for(:navigation) do %>
+  <%= button_to "Back to Main", questions_path, :class => "btn btn-info" %>
+<% end %>
+<% content_for(:header) do %>
+  <div class="header">
+    <h4><%= @question.question %>
+  </div>
+<% end %>
+

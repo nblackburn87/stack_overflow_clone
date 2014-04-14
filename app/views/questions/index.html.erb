@@ -1,0 +1,20 @@
+<%= content_for(:navigation) do %>
+  <%= link_to "Post new question", new_question_path, :class => "btn btn-info" %>
+<% end %>
+<% content_for(:header) do %>
+  <div class="header">
+    <h1>Stack DUNK!</h1>
+  </div>
+<% end %>
+
+<% @questions.each do |question| %>
+  <ul>
+    <li><%= link_to "#{question.question}", question_path(question) %>
+      <%= link_to "Edit Question", edit_question_path(question), :class => "btn btn-warning btn-xs" %>
+      <%= link_to "Delete Question", question_path(question),
+                                    data: { confirm: 'Are you sure?' },
+                                    :method => "delete",
+                                    :class => "btn btn-danger btn-xs" %>
+    </li>
+  </ul>
+<% end %>
