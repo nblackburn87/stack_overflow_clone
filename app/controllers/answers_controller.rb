@@ -7,6 +7,8 @@ class AnswersController < ApplicationController
   end
 
   def new
+    @user = current_user
+    @question = Question.find params[:question_id]
     @answer = Answer.new
   end
 
